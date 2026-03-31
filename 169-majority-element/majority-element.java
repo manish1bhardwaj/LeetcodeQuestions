@@ -2,12 +2,7 @@ class Solution {
     public int majorityElement(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int ele:nums){
-            if(!map.containsKey(ele)){
-                map.put(ele,1);
-            }
-            else{
-                map.put(ele,map.get(ele)+1);
-            }
+          map.put(ele,map.getOrDefault(ele,0)+1);
         }
         int max_freq = 0, ans_key = -1;
         for(var e:map.entrySet()){
