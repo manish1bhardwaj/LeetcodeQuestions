@@ -1,4 +1,4 @@
-select email as Email 
+select distinct(lower(email)) as Email 
 from Person 
 group by email
 having count(email)>1
